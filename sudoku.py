@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def draw_board(initial):
+def draw_board(board_state):
     for i in range(9):
         print('')
         if i == 3 or i == 6:
@@ -9,10 +9,10 @@ def draw_board(initial):
         for j in range(9):
             if j == 3 or j == 6:
                 print('|', end='')
-            if initial[i][j] == 0:
+            if board_state[i][j] == 0:
                 print(". ", end='')
             else:
-                print(str(initial[i][j]) + ' ', end='')
+                print(str(board_state[i][j]) + ' ', end='')
 
 
 def string_to_2d(init_str):
@@ -21,9 +21,12 @@ def string_to_2d(init_str):
     arr = np.array(arr).reshape(9, 9)
     return arr
 
-def check_move(i, j, arr):
 
-    return True
+def next_free_cell(board_state, i, j):
+    for x in range(i,9):
+        for y in range(j,9):
+            if table[x][y] == 0:
+                return x, y
 
 
 
