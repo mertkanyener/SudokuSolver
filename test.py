@@ -1,5 +1,9 @@
 import numpy as np
 
+def sth(x):
+    return x, x*3
+
+
 
 table = """400000805
 030000000
