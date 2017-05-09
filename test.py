@@ -1,24 +1,9 @@
-import numpy as np
+sth = "000100208"
+res = []
+for i in sth:
+    if i == '0':
+        res.append(set(range(1, 10)))
+    else:
+        res.append(set(range(int(i), int(i) + 1)))
 
-def sth(x):
-    return x, x*3
-
-
-
-table = """400000805
-030000000
-000700000
-020000060
-000080400
-000010000
-000603070
-500200000
-104000000"""
-
-init_str = table.replace('\n', '')
-arr = [int(ch) for ch in init_str]
-arr = np.array(arr).reshape(9,9)
-print(arr)
-
-a = arr[0].remove(arr[0][6])
-print(a)
+print(res)
